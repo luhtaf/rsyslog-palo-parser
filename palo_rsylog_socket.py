@@ -8,7 +8,8 @@ def load_yaml(path):
 
 
 data=load_yaml('rsyslog_palo.yaml')
-
+nama_rsyslog=data['rsyslog']['name']
+print(nama_rsyslog)
 # Create a UDP socket to listen on port 514
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("0.0.0.0", data['rsyslog']['port']))
@@ -23,7 +24,7 @@ with open( os.path.join(log_folder,data['log']['file']), 'a') as f:
 
         # Check if message is from PA-VM and contains "THREAT" keyword
         #print(message)
-        if data['rsyslog']['name'] in message:
+        if nama_rsyslog in message:
             log_message = re.sub(r'^<\d+>', '', message)
             f.write(f"{log_message}\n")
-            # print(log_message)
+            print(log_message)
