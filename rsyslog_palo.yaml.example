@@ -1,5 +1,5 @@
 rsyslog:
-  name: PA-VM
+  name: "PA-VM"
   port: 514
 log:
   # path: "/var/log/"
