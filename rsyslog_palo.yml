@@ -1,0 +1,8 @@
+rsyslog:
+    name: PA-VM
+    port: 514
+  log:
+    # path: "/var/log/"
+    path: "." 
+    file: "paloalto.log"
+  
