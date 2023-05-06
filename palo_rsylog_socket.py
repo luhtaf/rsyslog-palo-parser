@@ -23,7 +23,7 @@ with open( os.path.join(log_folder,data['log']['file']), 'a') as f:
 
         # Check if message is from PA-VM and contains "THREAT" keyword
         #print(message)
-        if f"{data['rsyslog']['name']}" in message in message:
+        if f"{data['rsyslog']['name']}" in message:
             log_message = re.sub(r'^<\d+>', '', message)
             f.write(f"{log_message}\n")
             # print(log_message)
