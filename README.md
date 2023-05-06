@@ -10,7 +10,11 @@ First, install pip
 then install requirements with pip
 * in linux:
 
-    pip install -r requirements.txt
+    `pip install -r requirements.txt`
 * in windows:
 
-    python3 -m pip install -r requirements.txt
+    `python3 -m pip install -r requirements.txt`
+
+fill config in `rsyslog_palo.yaml` and run:
+
+    `python3 palo_rsyslog_socket.py`
