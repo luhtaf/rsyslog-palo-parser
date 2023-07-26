@@ -30,13 +30,13 @@ if len(nama_rsyslog)!=len(files):
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("0.0.0.0", data['rsyslog']['port']))
 
-log_folder=data['log']['path']
+# log_folder=data['log']['path']
 # Continuously listen for incoming syslog messages
 print("Starting and listen on port 514")
 initial_time=datetime.now().day
 f=[]
 for file in files:
-    f.append(open(os.path.join(log_folder,file), 'a'))
+    f.append(open(file, 'a'))
 # with open( os.path.join(log_folder,data['log']['file']), 'a') as f:
 while True:
     data, addr = sock.recvfrom(1024)
@@ -56,7 +56,7 @@ while True:
             for file in files:
                 f[index].close()                
                 f.pop(index)
-                f.insert(index,open(os.path.join(log_folder, file), 'a'))              
+                f.insert(index,open(file, 'a'))              
                 initial_time=datetime.now()
                 index=index+1
 
