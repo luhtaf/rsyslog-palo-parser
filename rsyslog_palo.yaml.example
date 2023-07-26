@@ -1,9 +1,9 @@
 rsyslog:
-  name: ["PA-VM"]
+  name: ["PA-VM","PA-VM2"]
   port: 514
 log:
   # path: "/var/log/"
   path: "." 
-  file: ["paloalto.log"]
+  file: ["paloalto.log","paloalto2.log"]
 
 #IMPORTANT make sure, rsyslog.name, and log.file length is same
