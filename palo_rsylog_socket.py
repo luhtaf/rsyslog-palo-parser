@@ -31,7 +31,8 @@ while True:
     #print(message)
     if nama_rsyslog in message:
         log_message = re.sub(r'^<\d+>', '', message)
-        f.write(f"{log_message}\n")
+        # f.write(f"{log_message}\n")
+        f.write(str(log_message)+"\n")
         print(log_message)
         current_time=datetime.now().day
         if initial_time !=current_time:
